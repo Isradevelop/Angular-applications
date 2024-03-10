@@ -1,0 +1,12 @@
+<h3 class="my-4 text-center">By Region</h3>
+<div class="row mb-3">
+  <app-nav-bar [navBarNames]="navBarOptions" (emitRegionEvent)="searchRegion($event)" [initialRegion]="initialRegion"
+    (sortByEvent)="onSortBy($event)"></app-nav-bar>
+</div>
+
+@if (isTouchedInputSearch) {
+<div class="row">
+  <app-country-list [countries]="countries | sortCountry:sortBy"
+    [hasPermittedChars]="hasPermittedChars"></app-country-list>
+</div>
+}

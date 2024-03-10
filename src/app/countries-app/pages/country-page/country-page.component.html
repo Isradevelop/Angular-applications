@@ -1,0 +1,51 @@
+@if (!country) {
+<div class="spinner-container">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+}@else {
+
+<div class="text-center d-flex justify-content-center gap-5 mt-5">
+  <h2>{{country.name.common}}</h2>
+  <div class="img-container">
+    <img src="{{country.flags.png}}" alt="{{country.name.common}}">
+  </div>
+</div>
+
+<div class="row mt-5 mb-3">
+
+  <ul class="list-group col-6">
+    <li class="list-group-item"><b>Capital: </b>{{country.capital}}</li>
+    <li class="list-group-item"><b>Continents: </b>{{country.continents}}</li>
+    <li class="list-group-item"><b>Region: </b>{{country.region}}</li>
+    <li class="list-group-item"><b>Sub-region: </b>{{country.subregion}}</li>
+    <li class="list-group-item"><b>Borders: </b>
+      <span>{{country.borders | joinArrayPipe: ', '}}</span>
+    </li>
+  </ul>
+  <ul class="list-group col-6">
+    <li class="list-group-item"><b>Languages: </b>{{languages}}</li>
+    <li class="list-group-item"><b>Population: </b>{{country.population | number:'':'es-AR'}}</li>
+    <li class="list-group-item"><b>Time zones: </b>{{country.timezones | joinArrayPipe: ', '}}</li>
+    <li class="list-group-item"><b>Currencies: </b>
+      @for (currency of currencies; track currency.name) {
+      <span title="{{currency.name}}">{{currency | currencyPipe}} </span>
+      }
+    </li>
+    <li class="list-group-item"><b>Prefix: </b>{{country.idd.root}} {{country.idd.suffixes | joinArrayPipe: ', '}}</li>
+  </ul>
+</div>
+<div class="d-flex flex-wrap gap-1 my-5">
+  <span class="col-1 badge bg-primary">{{country.translations['ara']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['jpn']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['spa']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['per']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['zho']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['kor']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['rus']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['urd']?.common}}</span>
+  <span class="col-1 badge bg-primary">{{country.translations['bre']?.common}}</span>
+</div>
+<a href="{{country.maps.googleMaps}}">See in Google Maps</a>
+}

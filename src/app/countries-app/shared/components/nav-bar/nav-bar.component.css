@@ -1,0 +1,18 @@
+li{ cursor: pointer;}
+
+.selected{
+    color: black !important;
+    font-weight: bold;
+}
+
+.navbar-list-countries{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media(width < 999px){
+  .navbar-list-countries{
+    flex-direction: column;
+  }
+}

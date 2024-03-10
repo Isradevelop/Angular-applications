@@ -1,0 +1,9 @@
+img{
+  width: 100%;
+}
+
+.img-container{
+  display: flex;
+  width: 50px;
+  border: 1px solid grey;
+}

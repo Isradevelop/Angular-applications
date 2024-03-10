@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><i><b>Countries list </b></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @for (name of navBarNames; track name) {
+        <li class="nav-link" [ngClass]="{'selected': region == name || initialRegion == name}"
+          (click)="searchRegion(name)">{{name}}</li>
+        }
+      </ul>
+      <div class="dropdown">
+        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Sort by
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" (click)="sortBy('country')">Country name</a></li>
+          <li><a class="dropdown-item" (click)="sortBy('capital')">Capital</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
