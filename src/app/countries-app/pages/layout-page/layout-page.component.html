@@ -1,8 +1,28 @@
-<div class="row m-5">
-  <div class="col-2">
+<div class="alert alert-info alert-dismissible fade show m-5" role="alert">
+  <h3>CountriesApp</h3>
+  <div>
+    <p>Angular application that shows country details, making use of the <a href="https://restcountries.com/">Rest
+        countries API</a>.</p>
+    <p>You can see the code on <a href="https://github.com/Isradevelop/Angular-applications">GitHub</a>.</p>
+  </div>
+  <br>
+  <div>
+    Technologies:
+    <ul>
+      <li><a href="https://angular.dev/">Angular version 17</a></li>
+      <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+      <li><a href="https://getbootstrap.com/">Bootstrap 5</a></li>
+      <li><a href="https://animate.style/">Animate CSS</a></li>
+    </ul>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="row m-5 layout-container">
+  <div class="col-2 sidebar">
     <app-sidebar></app-sidebar>
   </div>
-  <div class="col-10">
+  <div class="col-10 content">
     <router-outlet></router-outlet>
   </div>
 </div>

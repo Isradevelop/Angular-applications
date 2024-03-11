@@ -27,7 +27,6 @@ export class CountryPageComponent implements OnInit {
       )
       .subscribe(country => {
         if (!country) this.router.navigateByUrl('')
-
         this.country = country;
         this.languages = Object.values(country!.languages);
         this.currencies = Object.values(country!.currencies);

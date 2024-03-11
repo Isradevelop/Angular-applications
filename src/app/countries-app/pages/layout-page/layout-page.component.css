@@ -1,0 +1,12 @@
+@media(width < 1000px){
+  .layout-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar{
+    width: 100%;
+  }
+  .content{
+    width: 100%;
+  }
+}
