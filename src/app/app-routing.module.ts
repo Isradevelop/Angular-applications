@@ -8,19 +8,15 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: 'heroes',
-    loadChildren: () => import('./heros-app/heros-app.module').then(m => m.HerosAppModule)
-  },
-  {
-    path: 'countries',
-    loadChildren: () => import('./countries-app/countries-app.module').then(m => m.CountriesAppModule)
+    path: 'private',
+    loadChildren: () => import('./private/private.module').then(m => m.PrivateModule)
   },
   {
     path: '404',
     component: Error404PageComponent
   },
   {
-    path: '',
+    path: 'private',
     redirectTo: 'countries',
     pathMatch: 'full'
   },

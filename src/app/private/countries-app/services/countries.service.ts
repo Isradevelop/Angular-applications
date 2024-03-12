@@ -4,6 +4,7 @@ import { Country } from '../interfaces/country.interface';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { CacheStore } from '../interfaces/cahe-store.interface';
 import { Regions } from '../interfaces/navBarTypes.interface';
+import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class CountriesService {
 
   private http: HttpClient = inject(HttpClient);
 
-  private baseUrl: string = 'https://restcountries.com/v3.1/';
+  private baseUrl: string = environment.baseCountriesUrl;
 
   public cacheStorage: CacheStore = {
     byCapital: { term: '', countries: [] },
