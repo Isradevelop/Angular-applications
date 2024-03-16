@@ -4,22 +4,22 @@ import { LayoutComponent } from './pages/layout/layout.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'private',
     component: LayoutComponent,
     children: [
       {
         path: 'heroes',
-        loadChildren: () => import('./heros-app/heros-app.module').then(m => m.HerosAppModule)
+        loadChildren: () => import('./heroes-app/heroes-app.module').then(m => m.HeroesAppModule)
       },
       {
         path: 'countries',
         loadChildren: () => import('./countries-app/countries-app.module').then(m => m.CountriesAppModule)
       },
-    ]
+    ],
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'private/countries'
   }
 ];
 

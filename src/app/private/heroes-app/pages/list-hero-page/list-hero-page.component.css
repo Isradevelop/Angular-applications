@@ -1,0 +1,12 @@
+.heroes-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.heroes-title{
+  text-align: center;
+  margin-top: 15px;
+}

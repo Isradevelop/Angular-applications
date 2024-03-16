@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import localeES from '@angular/common/locales/es-AR';
 
 import { registerLocaleData } from '@angular/common';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 registerLocaleData(localeES);
 
@@ -21,7 +22,9 @@ registerLocaleData(localeES);
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

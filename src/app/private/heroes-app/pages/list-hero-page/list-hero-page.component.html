@@ -1,0 +1,11 @@
+<h1 class="heroes-title">Heroes list</h1>
+
+<mat-divider></mat-divider>
+
+<div class="heroes-container">
+  @for (hero of heroes | async; track hero.id) {
+
+  <app-hero-card [hero]="hero"></app-hero-card>
+
+  }
+</div>

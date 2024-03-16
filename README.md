@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
 
+# run App dev 
+
+steps:
+Clone project
+Execute ``npm install``
+Up backend (json-server) ``npm run backend``
+Run project ``ng s -o`` 
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

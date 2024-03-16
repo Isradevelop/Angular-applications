@@ -1,0 +1,22 @@
+<div class="search-hero-container">
+  <mat-form-field>
+    <mat-label>Hero finder</mat-label>
+    <input #inputSearchHero matInput type="text" (keyup)="searchHero(inputSearchHero.value)" />
+  </mat-form-field>
+
+  @if(isTouchedInput && heroes.length == 0){
+
+  <mat-option>
+    <p class="text-error" disabled>Heroe '{{inputSearchHero.value}}' not found</p>
+  </mat-option>
+  <mat-divider></mat-divider>
+
+  }@else {
+
+  @for (hero of heroes ; track hero.id) {
+  <mat-option [routerLink]="['/private/heroes/', hero.id]">{{hero.superhero}}</mat-option>
+  <mat-divider></mat-divider>
+  }
+
+  }
+</div>

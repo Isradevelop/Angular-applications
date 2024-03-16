@@ -1,0 +1,12 @@
+img{
+  width: 300px;
+}
+
+.mat-mdc-card{
+  width: 300px;
+}
+
+.mdc-card__actions{
+  display: flex;
+  justify-content: space-between;
+}
