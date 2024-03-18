@@ -10,3 +10,11 @@
 .text-error{
   color: red;
 }
+
+.heroes-search-title{
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 55px;
+  font-size: 50px;
+}
+

@@ -10,7 +10,7 @@ export class HeroUrlPipe implements PipeTransform {
 
     if (hero.alt_img) return hero.alt_img
 
-    return (!hero) ? 'assets/no-image.png' : `assets/heroes/${hero.id}.jpg`;
+    return (!hero.id && !hero.alt_img) ? 'assets/no-image.png' : `assets/heroes/${hero.id}.jpg`;
   }
 
 }

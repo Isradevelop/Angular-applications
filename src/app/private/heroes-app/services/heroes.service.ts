@@ -28,8 +28,22 @@ export class HeroesService {
   }
 
   getHeroByName(): Observable<Hero[] | undefined> {
-
     return this.http.get<Hero[]>(`${this.baseUrl}heroes`)
+  }
 
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(`${this.baseUrl}heroes`, hero)
+  }
+
+  updateHero(hero: Hero): Observable<Hero> {
+    return this.http.patch<Hero>(`${this.baseUrl}heroes/${hero.id}`, hero)
+  }
+
+  deleteHero(id: string): Observable<boolean> {
+    return this.http.delete(`${this.baseUrl}heroes/${id}`)
+      .pipe(
+        catchError(err => of(false)),
+        map(resp => true)
+      )
   }
 }
