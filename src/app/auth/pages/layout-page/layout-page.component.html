@@ -1,3 +1,29 @@
-<p>layout-page works!</p>
+<div class="auth-container">
 
-<router-outlet></router-outlet>
+  <div class="alert alert-info alert-dismissible fade show m-5" role="alert">
+    <h3>Auth System</h3>
+    <div>
+      <div>Basic authentication system without backend. <br><br>
+        You can log in to the application by registering or using the credentials:
+        <ul>
+          <li>Email: john.due&#64;gmail.com</li>
+          <li>Password: 1234</li>
+        </ul>
+      </div>
+      <p>You can see the code on <a href="https://github.com/Isradevelop/Angular-applications">GitHub</a>.</p>
+    </div>
+    <br>
+    <div>
+      Technologies:
+      <ul>
+        <li><a href="https://angular.io/api/router/CanMatchFn">Angular guards</a></li>
+        <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+        <li><a href="https://material.angular.io/">Angular Material</a></li>
+        <li><a href="https://www.npmjs.com/package/json-server">Npm json-server</a></li>
+      </ul>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

@@ -2,11 +2,11 @@
   <mat-sidenav-container [ngStyle]="{height: '100vh'}">
     <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
       <mat-toolbar>
-        <span>Menu</span>
-        <span class="spacer"></span>
+
         <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
+        <span class="spacer"></span>
       </mat-toolbar>
 
       <mat-nav-list>
@@ -22,8 +22,10 @@
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="spacer">Menú</span>
-
+      @if (user) {
+      <span>{{user.user}}</span>
+      }
+      <span class="spacer"></span>
     </mat-toolbar>
     <div class="container">
       <router-outlet></router-outlet>
