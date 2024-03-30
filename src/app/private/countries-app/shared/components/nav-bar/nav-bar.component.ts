@@ -8,8 +8,8 @@ import { Regions } from '../../../interfaces/navBarTypes.interface';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
-  @Input() initialRegion!: Regions;
-  @Input() navBarNames: Regions[] = [];
+  @Input({ required: true }) initialRegion!: Regions;
+  @Input({ required: true }) navBarNames: Regions[] = [];
   @Output() emitRegionEvent = new EventEmitter<Regions>();
   @Output() sortByEvent = new EventEmitter<'country' | 'capital'>();
   public region: Regions = '';

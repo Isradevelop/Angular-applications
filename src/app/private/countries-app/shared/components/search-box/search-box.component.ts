@@ -6,8 +6,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './search-box.component.css'
 })
 export class SearchBoxComponent {
-  @Input() initialValue!: string;
-  @Input() placeholder!: string;
+  @Input({ required: true }) initialValue!: string;
+  @Input({ required: true }) placeholder!: string;
   @Output() valueSearchEvent = new EventEmitter<string>();
   @Output() isTouchedEvent = new EventEmitter<void>();
 

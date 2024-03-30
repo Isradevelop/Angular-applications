@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -12,15 +12,15 @@ export class LoginPageComponent {
   private authService: AuthService = inject(AuthService);
   private router: Router = inject(Router);
 
-  public hasError: boolean = false;
+  public hasError = signal(false);
 
   onClick(email: string, password: string) {
     if (email != 'john.due@gmail.com' || password != '1234') {
-      this.hasError = true;
+      this.hasError.set(true);
       return;
     }
 
     this.authService.login(email, password)
-      .subscribe(user => this.router.navigateByUrl('/'))
+      .subscribe(user => this.router.navigateByUrl('/private/countries'))
   }
 }

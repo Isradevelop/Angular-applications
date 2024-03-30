@@ -7,7 +7,7 @@ import { Hero } from '../../interfaces/hero.interface';
   styleUrl: './hero-card.component.css'
 })
 export class HeroCardComponent implements OnInit {
-  @Input() hero!: Hero;
+  @Input({ required: true }) hero!: Hero;
 
   ngOnInit(): void {
     if (!this.hero) throw new Error('Hero property is required');

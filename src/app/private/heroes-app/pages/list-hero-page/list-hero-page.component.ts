@@ -1,7 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { HeroesService } from '../../services/heroes.service';
 import { Hero } from '../../interfaces/hero.interface';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-hero-page',
@@ -12,11 +11,10 @@ export class ListHeroPageComponent implements OnInit {
 
   private heroesService = inject(HeroesService);
 
-  public heroes?: Observable<Hero[]>;
+  public heroes = signal<Hero[]>([]);
 
   ngOnInit(): void {
-    this.heroes = this.heroesService.getHeroes()
-
+    this.heroesService.getHeroes()
+      .subscribe(heroes => this.heroes.set(heroes))
   }
-
 }

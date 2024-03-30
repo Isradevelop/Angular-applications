@@ -1,6 +1,6 @@
 @if (hasPermittedChars) {
 
-@if (countries.length > 0) {
+
 
 <ul class="list-group">
 
@@ -22,15 +22,16 @@
 
     </div>
   </li>
+  }@empty {
+  <div class="alert alert-warning" role="alert">
+    Countries not found.
+  </div>
   }
 
 </ul>
 
-}@else {
-<div class="alert alert-warning" role="alert">
-  Countries not found.
-</div>
-}
+
+
 
 }@else {
 <div class="alert alert-info" role="alert">

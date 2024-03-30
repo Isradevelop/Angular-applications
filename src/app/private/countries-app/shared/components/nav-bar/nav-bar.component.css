@@ -1,14 +1,18 @@
 li{ cursor: pointer;}
 
 .selected{
-    color: black !important;
-    font-weight: bold;
+    color: white !important;
 }
 
 .navbar-list-countries{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: blue;
+}
+
+.navbar-nav li {
+  margin-top: 8px;
 }
 
 @media(width < 999px){
