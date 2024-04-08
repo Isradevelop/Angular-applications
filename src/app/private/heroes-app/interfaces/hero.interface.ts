@@ -20,3 +20,5 @@ export interface User {
   "user": string,
   "email": string
 }
+
+export type HeroFormFields = 'superhero' | 'alter_ego' | 'characters' | 'first_appearance';

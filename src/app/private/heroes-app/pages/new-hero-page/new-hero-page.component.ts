@@ -1,9 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Hero, Publisher } from '../../interfaces/hero.interface';
+import { Hero, HeroFormFields, Publisher } from '../../interfaces/hero.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { HeroesService } from '../../services/heroes.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -13,14 +13,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class NewHeroPageComponent implements OnInit {
 
-  public heroForm = new FormGroup({
-    "id": new FormControl(''),
-    "superhero": new FormControl('', { nonNullable: true }),
+  private fb: FormBuilder = inject(FormBuilder);
+
+  public heroForm = this.fb.group({
+    "id": [''],
+    "superhero": ['', [Validators.required, Validators.minLength(3)]],
     "publisher": new FormControl<Publisher>(Publisher.DCComics),
-    "alter_ego": new FormControl(''),
-    "first_appearance": new FormControl(''),
-    "characters": new FormControl(''),
-    "alt_img": new FormControl('')
+    "alter_ego": ['', [Validators.required, Validators.minLength(3)]],
+    "first_appearance": ['', [Validators.required, Validators.minLength(5)]],
+    "characters": ['', [Validators.required, Validators.minLength(5)]],
+    "alt_img": [''],
   });
 
   public publishers = [
@@ -55,7 +57,10 @@ export class NewHeroPageComponent implements OnInit {
   }
 
   onSave() {
-    if (this.heroForm.invalid) return;
+    if (this.heroForm.invalid) {
+      this.heroForm.markAllAsTouched();
+      return;
+    }
 
     if (this.hero.id) {
       this.heroesService.updateHero(this.hero)
@@ -91,4 +96,27 @@ export class NewHeroPageComponent implements OnInit {
         });
       })
   }
+
+  isNotValidField(fieldName: HeroFormFields): boolean {
+    return !!(this.heroForm.controls[fieldName].errors && this.heroForm.controls[fieldName].touched)
+  }
+
+  getFieldMessageErrors(fieldName: HeroFormFields) {
+    if (!this.heroForm.controls[fieldName]) return null;
+
+    const errors = this.heroForm.controls[fieldName].errors || {};
+
+    for (const key of Object.keys(errors)) {
+      switch (key) {
+        case 'required':
+          return 'This field is required'
+        case 'minlength':
+          return `Min characters required: ${this.heroForm.controls[fieldName].getError('minlength').requiredLength}`
+        case 'min':
+          return `Min value: ${this.heroForm.controls[fieldName].getError('min').min}`
+      }
+    }
+    return null;
+  }
+
 }

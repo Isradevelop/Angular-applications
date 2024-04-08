@@ -14,7 +14,7 @@ export class ByCapitalPageComponent implements OnInit {
 
   private countriesService: CountriesService = inject(CountriesService);
 
-  public countries: Country[] = [];
+  public countries: Country[] | null = [];
 
   public hasPermittedChars = false;
 
@@ -23,12 +23,11 @@ export class ByCapitalPageComponent implements OnInit {
   ngOnInit(): void {
     const lsCountries = this.countriesService.loadFromLocalStorage();
     if (lsCountries != '') this.countriesService.cacheStorage = JSON.parse(lsCountries);
+    if (this.countriesService.cacheStorage.byCapital.countries.length > 0) this.isTouchedInputSearch = true;
 
     this.countries = this.countriesService.cacheStorage.byCapital.countries;
     this.initialValue = this.countriesService.cacheStorage.byCapital.term;
-    this.isTouchedInputSearch = true;
     this.hasPermittedChars = true;
-
   }
 
   searchCapital(value: string): void {
@@ -36,7 +35,7 @@ export class ByCapitalPageComponent implements OnInit {
     this.hasPermittedChars = true;
 
     if (value.length >= 0 && value.length < 3) {
-      this.countries = [];
+      this.countries = null;
       this.hasPermittedChars = false;
       return;
     }

@@ -1,0 +1,28 @@
+<form [formGroup]="bordersForm" class="borders-form">
+  <select formControlName="regions" class="form-control borders-select my-5">
+    <option value="">-- Select a continent --</option>
+    @for (region of regions; track region) {
+    <option value="{{region}}">{{region}}</option>
+    }
+  </select>
+
+  @if (countries.length > 0) {
+  <select formControlName="country" class="form-control borders-select my-5">
+    <option value="">-- Select a country --</option>
+    @for (country of countries; track $index) {
+    <option value="{{country.cca3}}">{{country.name.common}}</option>
+    }
+  </select>
+
+  }
+  @if (borders && borders.length > 0) {
+  <select formControlName="borders" class="form-control borders-select my-5">
+    <option value="">-- Select a border --</option>
+    @for (border of borders; track $index) {
+    <option value="{{border}}">{{border}}</option>
+    }
+  </select>
+
+  }
+
+</form>

@@ -28,6 +28,10 @@ h1{
   justify-content: space-between;
 }
 
+.text-error{
+  color: red;
+}
+
 
 @media (width < 1000px){
   .new-hero-container{

@@ -7,7 +7,7 @@ import { Country } from '../../interfaces/country.interface';
   styleUrl: './country-list.component.css'
 })
 export class CountryListComponent {
-  @Input({ required: true }) countries!: Country[];
+  @Input({ required: true }) countries!: Country[] | null;
   @Input({ required: true }) hasPermittedChars!: boolean;
 
   public sortBy: 'byCountry' | 'byCapital' | '' = '';

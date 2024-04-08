@@ -12,6 +12,8 @@ import { ByCapitalPageComponent } from './pages/by-capital-page/by-capital-page.
 import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.component';
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BordersPageComponent } from './pages/borders-page/borders-page.component';
 
 
 @NgModule({
@@ -22,15 +24,17 @@ import { CountryListComponent } from './components/country-list/country-list.com
     LayoutPageComponent,
     CountryPageComponent,
     CountryListComponent,
+    BordersPageComponent,
 
     CurrencyPipeTsPipe,
     JoinArrayPipeTsPipe,
-    SortCountryPipe
+    SortCountryPipe,
   ],
   imports: [
     CommonModule,
     CountriesAppRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class CountriesAppModule { }

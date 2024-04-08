@@ -3,8 +3,8 @@ import { Injectable, OnInit, inject } from '@angular/core';
 import { Country } from '../interfaces/country.interface';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { CacheStore } from '../interfaces/cahe-store.interface';
-import { Regions } from '../interfaces/navBarTypes.interface';
 import { environment } from '../../../../environments/environment.development';
+import { Regions } from '../interfaces/navBarTypes.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +15,17 @@ export class CountriesService {
 
   private baseUrl: string = environment.baseCountriesUrl;
 
+  private _regions: Regions[] = ['Europe', 'America', 'Oceania', 'Asia', 'Africa'];
+
   public cacheStorage: CacheStore = {
     byCapital: { term: '', countries: [] },
     byCountry: { term: '', countries: [] },
     byRegion: { region: '', countries: [] }
   };
+
+  get regions() {
+    return [...this._regions]
+  }
 
   getCountriesByCapital(term: string): Observable<Country[]> {
     const url = `${this.baseUrl}/capital/${term}`;
@@ -81,4 +87,5 @@ export class CountriesService {
       );
 
   }
+
 }

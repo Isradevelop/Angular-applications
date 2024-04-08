@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country.interface';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-by-country-page',
@@ -14,7 +15,7 @@ export class ByCountryPageComponent implements OnInit {
 
   private countryService: CountriesService = inject(CountriesService);
 
-  public countries: Country[] = [];
+  public countries: Country[] | null = [];
 
   public hasPermittedChars = false;
 
@@ -24,18 +25,18 @@ export class ByCountryPageComponent implements OnInit {
     const lsCountries = this.countryService.loadFromLocalStorage();
     if (lsCountries != '') this.countryService.cacheStorage = JSON.parse(lsCountries);
 
+    if (this.countryService.cacheStorage.byCountry.countries.length > 0) this.isTouchedInputSearch = true;
+
     this.countries = this.countryService.cacheStorage.byCountry.countries;
     this.initialValue = this.countryService.cacheStorage.byCountry.term;
-    this.isTouchedInputSearch = true;
     this.hasPermittedChars = true;
-
   }
 
   searchCountry(value: string): void {
     this.hasPermittedChars = true;
 
     if (value.length >= 0 && value.length < 3) {
-      this.countries = [];
+      this.countries = null;
       this.hasPermittedChars = false;
       return;
     }

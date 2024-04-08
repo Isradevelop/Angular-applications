@@ -28,10 +28,10 @@ export class ByRegionPageComponent implements OnInit {
   ngOnInit(): void {
     const lsCountries = this.countriesService.loadFromLocalStorage();
     if (lsCountries != '') this.countriesService.cacheStorage = JSON.parse(lsCountries);
+    if (this.countriesService.cacheStorage.byRegion.countries.length > 0) this.isTouchedInputSearch = true;
 
     this.countries = this.countriesService.cacheStorage.byRegion.countries;
     this.initialRegion = this.countriesService.cacheStorage.byRegion.region;
-    this.isTouchedInputSearch = true;
   }
 
   searchRegion(value: Regions): void {

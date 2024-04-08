@@ -6,35 +6,50 @@
 
     <img mat-card-image [src]="hero | heroImageUrlPipe">
     <form class="hero-info-container full-width" [formGroup]="heroForm" (ngSubmit)="onSave()">
+
+      @if (isNotValidField('superhero')) {
+      <span class="text-error">{{getFieldMessageErrors('superhero')}}</span>
+      }
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput required formControlName="superhero" />
+        <input matInput formControlName="superhero" />
       </mat-form-field>
 
 
+      @if (isNotValidField('alter_ego')) {
+      <span class="text-error">{{getFieldMessageErrors('alter_ego')}}</span>
+      }
       <mat-form-field>
         <mat-label>Alter ego</mat-label>
-        <input matInput required formControlName="alter_ego">
+        <input matInput formControlName="alter_ego">
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Publisher</mat-label>
-        <mat-select required formControlName="publisher">
+        <mat-select formControlName="publisher">
           @for (publisher of publishers; track $index) {
           <mat-option [value]="publisher.id">{{publisher.desc}}</mat-option>
           }
         </mat-select>
       </mat-form-field>
 
+      @if (isNotValidField('first_appearance')) {
+      <span class="text-error">{{getFieldMessageErrors('first_appearance')}}</span>
+      }
       <mat-form-field>
         <mat-label>First appearance</mat-label>
-        <input matInput required formControlName="first_appearance">
+        <input matInput formControlName="first_appearance">
       </mat-form-field>
 
+
+      @if (isNotValidField('characters')) {
+      <span class="text-error">{{getFieldMessageErrors('characters')}}</span>
+      }
       <mat-form-field>
         <mat-label>Characters</mat-label>
-        <input matInput required formControlName="characters">
+        <input matInput formControlName="characters">
       </mat-form-field>
+
 
       <mat-form-field>
         <mat-label>Alternative image</mat-label>
