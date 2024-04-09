@@ -12,6 +12,7 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { HeroesNavbarComponent } from './components/heroes-navbar/heroes-navbar.component';
 import { HeroesAppRoutingModule } from './heroes-app-routing.module';
 import { HeroUrlPipe } from './pipes/hero-url.pipe';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HeroUrlPipe } from './pipes/hero-url.pipe';
     ReactiveFormsModule,
     HeroesAppRoutingModule,
     MaterialModule,
+    SharedModule
   ]
 })
 export class HeroesAppModule { }

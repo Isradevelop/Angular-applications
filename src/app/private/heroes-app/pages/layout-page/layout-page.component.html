@@ -1,20 +1,3 @@
-<div class="alert alert-info alert-dismissible fade show m-5" role="alert">
-  <h3>Heroes-App</h3>
-  <div>
-    <p>Angular application consisting of a crud of heroes with reactive forms.</p>
-    <p>You can see the code on <a href="https://github.com/Isradevelop/Angular-applications">GitHub</a>.</p>
-  </div>
-  <br>
-  <div>
-    Technologies:
-    <ul>
-      <li><a href="https://angular.dev/">Angular version 17</a></li>
-      <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-      <li><a href="https://material.angular.io/">Angular Material</a></li>
-      <li><a href="https://www.npmjs.com/package/json-server">Npm json-server</a></li>
-    </ul>
-  </div>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+<app-layout-alert [alertContent]="alertContent" />
 
 <app-heroes-navbar></app-heroes-navbar>

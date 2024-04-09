@@ -3,3 +3,9 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+@media(width < 995px) {
+  .logout-button{
+    display: none;
+  }
+}

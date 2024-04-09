@@ -13,7 +13,7 @@ import { PrivateNavbarComponent } from './components/private-navbar/private-navb
   ],
   imports: [
     CommonModule,
-    PrivateRoutingModule
+    PrivateRoutingModule,
   ]
 })
 export class PrivateModule { }

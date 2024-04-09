@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'countries',
         loadChildren: () => import('./countries-app/countries-app.module').then(m => m.CountriesAppModule)
       },
+      {
+        path: 'maps',
+        loadChildren: () => import('./maps-app/maps.module').then(m => m.MapsModule)
+      },
     ],
   },
   {

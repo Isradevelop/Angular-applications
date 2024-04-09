@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CountriesAppRoutingModule } from './countries-app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { SharedModule as AppSharedModule } from '../../shared/shared.module';
 import { CurrencyPipeTsPipe } from './pipes/currency.pipe.ts.pipe';
 import { JoinArrayPipeTsPipe } from './pipes/join-array.pipe';
 import { SortCountryPipe } from './pipes/sort-country.pipe';
@@ -31,10 +32,11 @@ import { BordersPageComponent } from './pages/borders-page/borders-page.componen
     SortCountryPipe,
   ],
   imports: [
+    AppSharedModule,
     CommonModule,
     CountriesAppRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class CountriesAppModule { }

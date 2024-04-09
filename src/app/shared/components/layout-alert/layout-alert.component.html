@@ -1,0 +1,17 @@
+<div class="alert alert-info alert-dismissible fade show m-5" role="alert">
+  <h3>{{alertContent.title}}</h3>
+  <div>
+    <p>{{alertContent.description}}</p>
+    <p>You can see the code on <a href="https://github.com/Isradevelop/Angular-applications">GitHub</a>.</p>
+  </div>
+  <br>
+  <div>
+    Technologies:
+    <ul>
+      @for (tecnology of alertContent.tecnologies; track $index) {
+      <li><a href="{{tecnology.link}}">{{tecnology.name}}</a></li>
+      }
+    </ul>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
