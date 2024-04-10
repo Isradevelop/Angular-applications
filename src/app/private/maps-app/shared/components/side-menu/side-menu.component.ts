@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class SideMenuComponent {
 
   public menuItems = [
-    { name: 'Fullscreen', path: 'fullscreen' },
-    { name: 'Zoom range', path: 'zoom-range' },
-    { name: 'Markers', path: 'markers' },
-    { name: 'Properties', path: 'properties' }
+    { name: 'Fullscreen', path: '../fullscreen' },
+    { name: 'Zoom range', path: '../zoom-range' },
+    { name: 'Markers', path: '../markers' },
+    { name: 'Properties', path: '../properties' }
   ];
 
 }
