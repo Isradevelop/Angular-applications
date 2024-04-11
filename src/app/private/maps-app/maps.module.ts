@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../environments/environment.development';
+
+import mapboxgl from 'mapbox-gl';
+(mapboxgl as any).accessToken = environment.mapboxkey;
 
 import { MapsRoutingModule } from './maps-routing.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
