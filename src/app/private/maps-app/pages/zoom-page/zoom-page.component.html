@@ -1,4 +1,17 @@
-<p>zoom-page works!</p>
 <div class="zoom-container">
-    <app-side-menu />
+  <app-side-menu />
+  <div id="map" #map></div>
+  <div class="zoom-range-button">
+    <div class="zoom-range-button-container">
+      <button class="btn btn-primary" (click)="zoomOut()">-</button>
+      <input type="range" [value]="zoomLevel()" min="1" max="18" (change)="setZoom(zoomInput.value)" #zoomInput>
+      <button class="btn btn-primary" (click)="zoomIn()">+</button>
+    </div>
+    <div class="form-label">
+      <span>Zoom: {{zoomLevel() | number:'2.0-2'}}</span>
+      <br>
+      Lat: {{latitude | number:'2.0-2'}}, Lon: {{longitude | number:'2.0-2'}}
+    </div>
+  </div>
+
 </div>
