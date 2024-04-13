@@ -5,6 +5,7 @@ import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-pa
 import { ZoomPageComponent } from './pages/zoom-page/zoom-page.component';
 import { MarkersPageComponent } from './pages/markers-page/markers-page.component';
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
+import { FlyToComponent } from './pages/fly-to/fly-to.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'markers',
         component: MarkersPageComponent
+      },
+      {
+        path: 'fly-to',
+        component: FlyToComponent
       },
       {
         path: 'properties',

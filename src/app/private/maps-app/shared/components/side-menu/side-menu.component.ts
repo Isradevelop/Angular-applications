@@ -11,6 +11,7 @@ export class SideMenuComponent {
     { name: 'Fullscreen', path: '../fullscreen' },
     { name: 'Zoom range', path: '../zoom-range' },
     { name: 'Markers', path: '../markers' },
+    { name: 'Fy to', path: '../fly-to' },
     { name: 'Properties', path: '../properties' }
   ];
 

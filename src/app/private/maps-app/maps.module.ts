@@ -15,6 +15,7 @@ import { PropertiesPageComponent } from './pages/properties-page/properties-page
 import { ZoomPageComponent } from './pages/zoom-page/zoom-page.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
+import { FlyToComponent } from './pages/fly-to/fly-to.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SharedModule } from '../../shared/shared.module';
     FullScreenPageComponent,
     MarkersPageComponent,
     PropertiesPageComponent,
-    ZoomPageComponent
+    ZoomPageComponent,
+    FlyToComponent
   ],
   imports: [
     CommonModule,
