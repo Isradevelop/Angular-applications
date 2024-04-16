@@ -9,8 +9,23 @@ width: 95vw;
 height: 85vh;
 }
 
-.btn-add-marker{
+.btn-zoom-out{
 position: relative;
 bottom: 85px;
 left: 90px;
 }
+
+.input-search-by-coords{
+  position: relative;
+  bottom: 200px;
+  left: 90px;
+  height: 38px;
+  width: 275px;
+  display: grid;
+  grid-template-columns: 75px 75px 100px;
+  gap: 5px
+}
+
+.input-search-by-coords button,
+.input-search-by-coords input
+{ height: 37px;}

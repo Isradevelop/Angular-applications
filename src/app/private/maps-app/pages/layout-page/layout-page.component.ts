@@ -21,12 +21,12 @@ export class LayoutPageComponent {
         link: 'https://www.typescriptlang.org/'
       },
       {
-        name: 'Angular Material',
-        link: 'https://material.angular.io/'
+        name: 'Bootstrap 5',
+        link: 'https://getbootstrap.com/docs/5.0'
       },
       {
-        name: 'Npm json-server',
-        link: 'https://www.npmjs.com/package/json-server'
+        name: 'Mapbox',
+        link: 'https://www.mapbox.com/'
       }
     ]
   }

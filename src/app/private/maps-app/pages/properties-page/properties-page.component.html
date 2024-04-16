@@ -1,4 +1,16 @@
-<p>properties-page works!</p>
 <div class="properties-container">
+  <div class="side-menu">
     <app-side-menu />
+  </div>
+
+  <div class="content">
+    @for (house of houses; track $index) {
+    <div class="map-container">
+      <app-mini-map [lngLat]="house.lngLat" />
+      <h2>{{house.title}}</h2>
+      <div>{{house.description}}</div>
+    </div>
+    }
+  </div>
+
 </div>
