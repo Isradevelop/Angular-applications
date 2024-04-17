@@ -1,9 +1,9 @@
 <div class="properties-container">
-  <div class="side-menu">
+  <aside class="side-menu">
     <app-side-menu />
-  </div>
+  </aside>
 
-  <div class="content">
+  <main class="content">
     @for (house of houses; track $index) {
     <div class="map-container">
       <app-mini-map [lngLat]="house.lngLat" />
@@ -11,6 +11,6 @@
       <div>{{house.description}}</div>
     </div>
     }
-  </div>
+  </main>
 
 </div>

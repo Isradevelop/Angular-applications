@@ -9,7 +9,7 @@ import { LayoutAlert } from '../../../../shared/interfaces/layout-alert.interfac
 export class LayoutPageComponent {
 
   public alertContent: LayoutAlert = {
-    title: 'Heroes-App',
+    title: 'Maps-App',
     description: 'Angular application consisting of a crud of heroes with reactive forms.',
     tecnologies: [
       {

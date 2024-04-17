@@ -1,5 +1,7 @@
-<ul class="list-group maps-navbar">
-  @for (item of menuItems; track item.path) {
-  <li class="list-group-item" routerLink="{{item.path}}" routerLinkActive="active">{{item.name}}</li>
-  }
-</ul>
+<nav>
+  <ul class="list-group maps-navbar">
+    @for (item of menuItems; track item.path) {
+    <li class="list-group-item" routerLink="{{item.path}}" routerLinkActive="active">{{item.name}}</li>
+    }
+  </ul>
+</nav>

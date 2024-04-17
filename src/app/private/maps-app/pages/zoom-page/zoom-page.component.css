@@ -6,13 +6,13 @@
   margin-top: 25px;
   margin-right: 25px;
   width: 95vw;
-  height: 100vh;
+  height: 85vh;
 }
 
 .zoom-range-button{
+  position: absolute;
   bottom: 50px;
   left: 50px;
-  position: fixed;
   z-index: 999;
   width: 500px;
   background-color: white;

@@ -1,10 +1,14 @@
 <div class="fly-to-container">
-  <app-side-menu />
-  <div id="map" #map title="Click anywhere on the map"></div>
-  <button class="btn btn-primary btn-zoom-out" (click)="zoomOut()">Zoom out</button>
-  <div class="input-search-by-coords">
-    <input type="text" class="form-control input-set-coordinates" #inputLng placeholder="Lng" />
-    <input type="text" class="form-control input-set-coordinates" #inputLat placeholder="Lat" />
-    <button class="btn btn-primary" (click)="flyToCoordinates(inputLng.value, inputLat.value)">Go to</button>
-  </div>
+  <aside>
+    <app-side-menu />
+  </aside>
+  <main>
+    <div id="map" #map title="Click anywhere on the map"></div>
+    <button class="btn btn-primary btn-zoom-out" (click)="zoomOut()">Zoom out</button>
+    <div class="input-search-by-coords">
+      <input type="text" class="form-control input-set-coordinates" #inputLng placeholder="Lng" />
+      <input type="text" class="form-control input-set-coordinates" #inputLat placeholder="Lat" />
+      <button class="btn btn-primary" (click)="flyToCoordinates(inputLng.value, inputLat.value)">Go to</button>
+    </div>
+  </main>
 </div>

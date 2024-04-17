@@ -1,4 +1,4 @@
-<div class="m-5 layout-container">
+<nav class="m-5 layout-container">
   <mat-sidenav-container [ngStyle]="{height: '100vh'}">
     <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
       <mat-toolbar>
@@ -24,9 +24,9 @@
       </button>
       <span class="spacer"></span>
     </mat-toolbar>
-    <div class="container">
+    <main class="container">
       <router-outlet></router-outlet>
-    </div>
+    </main>
   </mat-sidenav-container>
 
-</div>
+</nav>
