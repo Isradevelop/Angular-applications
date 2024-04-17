@@ -1,0 +1,28 @@
+footer{
+  height: 120px;
+  padding: 25px;
+  background-color: #e4e3e3;
+  border-radius: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  bottom: 20px;
+  width: 95vw;
+  margin-top: 25px;
+}
+
+footer h3{
+  line-height: 15px;
+}
+
+.icons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.icons-container svg{
+  cursor: pointer;
+}

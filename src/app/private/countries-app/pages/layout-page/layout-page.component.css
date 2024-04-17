@@ -1,3 +1,8 @@
+
+.layout-container{
+  min-height: 70vh;
+}
+
 @media(width < 1000px){
   .layout-container{
     display: flex;

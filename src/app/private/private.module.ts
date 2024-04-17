@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PrivateRoutingModule } from './private-routing.module';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { PrivateNavbarComponent } from './components/private-navbar/private-navbar.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { PrivateNavbarComponent } from './components/private-navbar/private-navb
   imports: [
     CommonModule,
     PrivateRoutingModule,
+    FooterComponent
   ]
 })
 export class PrivateModule { }

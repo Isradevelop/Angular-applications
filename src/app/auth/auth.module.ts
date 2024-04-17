@@ -8,6 +8,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { LayoutAlertComponent } from '../components/layout-alert/layout-alert.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LayoutAlertComponent } from '../components/layout-alert/layout-alert.co
     AuthRoutingModule,
     MaterialModule,
     SharedModule,
-    LayoutAlertComponent
+    LayoutAlertComponent,
+    FooterComponent
   ]
 })
 export class AuthModule { }
