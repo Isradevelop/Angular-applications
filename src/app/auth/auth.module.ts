@@ -7,6 +7,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { LayoutAlertComponent } from '../components/layout-alert/layout-alert.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     AuthRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    LayoutAlertComponent
   ]
 })
 export class AuthModule { }

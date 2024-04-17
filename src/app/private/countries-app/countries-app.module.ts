@@ -15,6 +15,7 @@ import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.com
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BordersPageComponent } from './pages/borders-page/borders-page.component';
+import { LayoutAlertComponent } from '../../components/layout-alert/layout-alert.component';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { BordersPageComponent } from './pages/borders-page/borders-page.componen
     SortCountryPipe,
   ],
   imports: [
-    AppSharedModule,
+    LayoutAlertComponent,
     CommonModule,
     CountriesAppRoutingModule,
     SharedModule,

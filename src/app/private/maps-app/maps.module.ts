@@ -14,8 +14,8 @@ import { MarkersPageComponent } from './pages/markers-page/markers-page.componen
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
 import { ZoomPageComponent } from './pages/zoom-page/zoom-page.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../../shared/shared.module';
 import { FlyToComponent } from './pages/fly-to/fly-to.component';
+import { LayoutAlertComponent } from '../../components/layout-alert/layout-alert.component';
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import { FlyToComponent } from './pages/fly-to/fly-to.component';
     CommonModule,
     MapsRoutingModule,
     RouterModule,
-    SharedModule
+    LayoutAlertComponent
   ]
 })
 export class MapsModule { }

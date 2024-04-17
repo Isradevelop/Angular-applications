@@ -13,6 +13,7 @@ import { HeroesNavbarComponent } from './components/heroes-navbar/heroes-navbar.
 import { HeroesAppRoutingModule } from './heroes-app-routing.module';
 import { HeroUrlPipe } from './pipes/hero-url.pipe';
 import { SharedModule } from '../../shared/shared.module';
+import { LayoutAlertComponent } from '../../components/layout-alert/layout-alert.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SharedModule } from '../../shared/shared.module';
     ReactiveFormsModule,
     HeroesAppRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    LayoutAlertComponent
   ]
 })
 export class HeroesAppModule { }
